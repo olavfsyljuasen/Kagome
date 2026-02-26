@@ -1,0 +1,283 @@
+\documentclass[aps,prb,twocolumn,superscriptaddress]{revtex4-2}
+
+\usepackage[bookmarks=false,colorlinks=true,urlcolor=blue,citecolor=blue,linkcolor=blue]{hyperref}
+
+\usepackage{cancel}
+\usepackage{xspace}
+\usepackage{tikz}
+\usetikzlibrary{calc,arrows}
+
+\usepackage{amsmath,amssymb,bm}
+\usepackage{gensymb}
+\usepackage[normalem]{ulem}
+\usepackage{booktabs}
+
+\usepackage{graphicx}
+
+%\newcommand{\mycomment}[1]{{\color{red}{\small #1}}}
+\newcommand{\mycomment}[1]{}
+\newcommand{\note}[1]{#1}
+
+\newcommand{\markup}[1]{{\color{red} #1}}
+\newcommand{\OFS}[1]{{\color{red} #1}}
+%\newcommand{\markup}[1]{#1}
+%\newcommand{\OFS}[1]{{#1}}
+
+\newcommand{\delete}[1]{\markup{\sout{#1}}}
+%\newcommand{\delete}[1]{}
+
+\newcommand{\para}{{\mkern3mu\vphantom{\perp}\vrule depth 0pt\mkern2mu\vrule depth 0pt\mkern3mu}}
+
+
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\beal}{\begin{align}}
+\newcommand{\eeal}{\end{align}}
+\newcommand{\bes}{\begin{equation} \begin{split}}
+\newcommand{\ees}{\end{split} \end{equation}}
+
+
+\newcommand{\f}{\frac}
+\newcommand{\diff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\ddiff}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\tr}{\mbox{Tr}}
+
+\newcommand{\down}{\downarrow}
+\newcommand{\dn}{\downarrow}
+\newcommand{\up}{\uparrow}
+
+\newcommand{\order}[1]{{\cal O}(#1)}
+
+\newcommand{\chidp}{\chi^{\prime \prime}}
+
+
+\newcommand{\qv}{\vec{q}}
+\newcommand{\qvp}{\vec{q}^{\,\prime}}
+\newcommand{\qvpp}{\vec{q}^{\,\prime \prime}}
+\newcommand{\Qv}{\vec{Q}}
+\newcommand{\pv}{\vec{p}}
+\newcommand{\pvp}{\vec{p}^{\,\prime}}
+\newcommand{\pp}{p^\prime}
+\newcommand{\rv}{\vec{r}}
+\newcommand{\rvp}{\vec{r}^{\,\prime}}
+\newcommand{\Rv}{\vec{R}}
+\newcommand{\Rvp}{\vec{R}^{\prime}}
+\newcommand{\Gv}{\vec{G}}
+
+\newcommand{\uv}{\vec{u}}
+\newcommand{\vv}{\vec{v}}
+\newcommand{\uvp}{\vec{u}^\prime}
+\newcommand{\vvp}{\vec{v}^\prime}
+\newcommand{\wv}{\vec{w}}
+
+
+\newcommand{\Sv}{\vec{S}}
+
+\newcommand{\av}{\vec{a}}
+\newcommand{\bv}{\vec{b}}
+\newcommand{\mv}{\vec{m}}
+\newcommand{\hv}{\vec{h}}
+
+\newcommand{\Pimat}{\mathbf{\Pi}}
+\newcommand{\Sigmamat}{\mathbf{\Sigma}}
+\newcommand{\Dmat}{\mathbf{D}}
+\newcommand{\Dinvmat}{\mathbf{D}^{-1}}
+\newcommand{\Dzeromat}{\mathbf{D_0}}
+\newcommand{\Dzeroinvmat}{\mathbf{D^{-1}_0}}
+\newcommand{\Lambdamat}{\mathbf{\Lambda}}
+\newcommand{\Lambdafmat}{\mathbf{\tilde{\Lambda}}}
+\newcommand{\lambdat}{\tilde{\lambda}}
+\newcommand{\Jmat}{\mathbf{J}}
+\newcommand{\onemat}{\mathbf{1}}
+\newcommand{\Deltamat}{\mathbf{\Delta}}
+\newcommand{\deltamat}{\mathbf{\delta}}
+\newcommand{\Kmat}{\mathbf{K}}
+%\newcommand{\Keffmat}{\mathbf{K_{\mathrm{eff}}}}
+%\newcommand{\Keffinvmat}{\mathbf{K}^{-1}_{\mathbf{\mathrm{eff}}}}
+\newcommand{\Keffmat}{\mathbf{K}}
+\newcommand{\Keffinvmat}{\mathbf{K}^{-1}}
+\newcommand{\Kinvmat}{\mathbf{K}^{-1}}
+\newcommand{\Kinv}{\ensuremath{K^{-1}}}
+%\newcommand{\Keff}{K_{\mathrm{eff}}{}}
+%\newcommand{\Keffinv}{K^{-1}_{\mathrm{eff}}{}}
+%\newcommand{\Keffinvinv}{K^{-2}_{\mathrm{eff}}{}}
+\newcommand{\Keff}{K}
+\newcommand{\Keffinv}{K^{-1}}
+\newcommand{\Keffinvinv}{K^{-2}}
+
+\newcommand{\xhat}{\hat{x}}
+\newcommand{\yhat}{\hat{y}}
+
+\newcommand{\Jonetwo}{$J_1$-$J_2$}
+\newcommand{\Jonethree}{$J_1$-$J_3$}
+\newcommand{\Jtwothree}{$J_2$-$J_3$}
+\newcommand{\Jonetwothree}{$J_1$-$J_2$-$J_3$}
+\newcommand{\Srest}{\ensuremath{S_{R}}}
+\newcommand{\singleq}{single-$\vec{q}$\xspace}
+
+\newcommand{\THUMP}{T_{\rm hump}\xspace}
+\newcommand{\SIGMAHUMP}{\sigma_{\rm hump}\xspace}
+\newcommand{\SQ}{S_{\qv}\xspace}
+
+
+\newcommand{\RN}[1]{%
+\textup{\uppercase\expandafter{\romannumeral#1}}%
+}
+
+
+\newcommand{\Tr}{\mathrm{Tr}}
+\newcommand{\Amattilde}{\mathbf{\tilde{A}}}
+\newcommand{\Qmat}{\mathbf{Q}}
+\newcommand{\Qmatp}{\mathbf{Q^\prime}}
+
+\newcommand{\Dmatp}{\mathbf{D^\prime}}
+\newcommand{\Gmat}{\mathbf{G}}
+\newcommand{\Umat}{\mathbf{U}}
+\newcommand{\Vmat}{\mathbf{V}}
+\newcommand{\abs}[1]{\lvert #1 \rvert}
+\newcommand{\cv}{c_v}
+
+\newcommand{\ev}{\vec{e}}
+
+\usepackage{contour}
+
+\definecolor{taylorswift}{rgb}{0.0862745098,0.4666666667,0.3411764706}
+\definecolor{fearless}{rgb}{0.8862745098,0.6117647059,0.2823529412}
+\definecolor{speaknow}{rgb}{0.4588235294,0.2274509804,0.4980392157}
+\definecolor{red}{rgb}{0.6509803922,0.1254901961,0.2705882353}
+\definecolor{TS1989}{rgb}{0.1803921569,0.6,0.9764705882}
+\definecolor{reputation}{rgb}{0.1450980392,0.1490196078,0.1529411765}
+\definecolor{lover}{rgb}{0.8392156863,0.2117647059,0.5529411765}
+
+% default arrow style in tikz
+\tikzset{>=latex}
+
+
+\begin{document}
+
+\title{Weak First Order Phase Transition in the Classical Kagome Antiferromagnet}
+
+\author{Cecilie Glittum}
+\affiliation{Department of Physics, University of Oslo, P.~O.~Box 1048 Blindern, N-0316 Oslo, Norway}
+%\affiliation{Helmholtz-Zentrum Berlin für Materialien und Energie GmbH, Hahn-Meitner-Platz 1 14109 Berlin, Germany}
+%\affiliation{Dahlem Center for Complex Quantum Systems and Fachbereich Physik, Freie Universität Berlin, 14195 Berlin, Germany}
+\author{Olav F. Sylju{\aa}sen}
+\affiliation{Department of Physics, University of Oslo, P.~O.~Box 1048 Blindern, N-0316 Oslo, Norway}
+% Add more authors and affiliations as needed
+
+\begin{abstract}
+  We consider the classical antiferromagnetic Heisenberg model on the Kagome lattice. Using Nematic Bond Theory, a diagrammatic method, we find evidence that the ordered $\sqrt{3} \times \sqrt{3}$ low-temperature state is separated from the disordered state at higher temperature by a weak first order phase transition. The latent heat of this phase transition is very small which explains why it has not been detected in previous Monte Carlo simulations. We also consider the pyrochlore antiferromagnet.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+The Heisenberg antiferromagnet on the Kagome lattice has drawn lots of attention as it is....
+Magnetic materials with high spins can often be modelled using classical spin models. These classical models can capture
+high/temperature properties and phase transitions. Such classical models have the advantage that they often can be
+treated more easiliy than the corresponding quantum models, especially for frustrated spins. It is interesting to understand
+the ground state properties of these models, especially if they order or not. It is also interesting to deduce consequence of order disorder
+on the specific heat at T=0. This is peculiar to the classical models as The third law of thermodynamics implies that the specific heat of any real substance vanishes as the temperature goes to zero.
+This is not so for classical models for which the entropy goes to negative infinity as T goes to zero,
+\\
+\section{Ordered state}
+The specific heat can be derived from the free energy per spin as the following:
+\be
+  \cv = -T  \f{\partial^2 f}{\partial T^2}.
+\ee
+Alternatively it can be derived from the internal energy per spin as
+\be
+   \cv = \f{\partial u}{\partial T}
+\ee
+Thus for very low temperatures, the specific heat probes the number of low-lying energy states and how the energy change as the ground state is deformed.
+
+For an ordered state one can always rotate the ordered state to a ferromagnetic configurations for which one can parametrize the deviations as
+\be
+     \vec{S}  = ( \epsilon_x, \epsilon_y , 1 - (\epsilon_x^2 + \epsilon_y^2)/2)
+\ee
+For each spin there are thus two degrees of freedom $\epsilon_x$ and $\epsilon_y$ that express how the energy increses from the ground state.
+ In the generic case the energy increase is quadratic in the degree of freedom which gives a contribution to the partition function as
+ \be
+      Z = \int d\epsilon  e^{-\beta \alpha \epsilon^2}  = \sqrt{ \f{\pi}{\beta \alpha}}  = e^{ -\f{1}{2} \ln{ \beta \alpha}}
+ \ee
+where we have extended the limits on this integral and used $\alpha$ to indicate the coefficient of the energy increase.
+Setting $Z=e^{-\beta F}$  we find that the contribution to the free energy from this is
+\be
+   F  = -\f{1}{2} T \ln{ T/ \alpha}
+\ee
+Thius the contribuition to the heat capacity is
+\be
+\cv  =  -T \f{\partial^2 F}{\partial T^2} = \f{T}{2} \f{\partial}{\partial T} \left( \ln{T} +1 + \ln{\alpha} \right) = \f{1}{2}
+\ee
+Thus each quadratic degree of freedom contributes $\f{1}{2}$ to the heat capacity.
+For quartic degrees of freedom, the corresponding number is $\f{1}{4}$.
+
+\subsubsection{Ordered states}
+A system of $N$ spins has in total $2N$ different degrees of freedom. If ground state is ordered and the Hamiltonian has global rotation symmetry, the ground state can also be globally rotated without costing energy, thus the total number of energy deviations from the ground state is not quite $N$ but somewhat less. For a general ordered state there are 3 different combinations of the degrees of freedom which results in global rotations. These must be subtracted. Thus we expect that the specific heat will be
+\be
+     \cv = \f{1}{2N} \left( 2N - 3 \right) = 1 - \f{3}{2N}
+\ee
+In the particular case for which the ordered state is collinear, theere are only two independent combinations that leads to a global rotations (all $\epsilon_x$ equal, and all $\epsilon_y$ equal). Rotations around the ordered direction does not change the spins and so does not correspond to fewer energy costly modes. In the colinear case we therefore expect
+ \be
+     \cv = \f{1}{2N} \left( 2N - 2 \right) = 1 - \f{1}{N}
+\ee 
+ Thus by stuying the finite size behavior of $\cv$ one can infer whether the ordering is collinear or not.
+ 
+ \section{Disordered states}
+ \subsubsection{Pyrochlore}
+ For some models the ground state degeneracy can be extensive. In those cases the number of zero modes will be proprotional to $N$ and so $\cv$ will approach a finite value less than $1$ as $N \to \infty$.
+ This happens for the Heisenberg model on the pyrochlore lattice for which it is argues that there is one zero mode for each tetrahedron. The argument for this is based on considering a ssytem with open boundary conditions, and one cannot easily use it for a periodic system, thus it only works in the $N \to \infty$ limit itself.
+Each tetrahedron has four spins and each spin participates in two tetrahedra..Thus $N= 4 N_T/2$, meaning that $N_T = N/2$.  And if each tetrahedron has a zero mode the specific heat will be
+\be
+    \cv = \f{1}{2N} \left( 2N - \f{N}{2} \right) = 1 - \f{1}{4} = \f{3}{4}
+ \ee
+ On the other hand, a single tetrahedron has $8$ degrees of freedom, and the ground state constraint $\sum \vec{S}_i = 0$ implies in all 5 zero modes: First make a square arrangement of the spins, such that two and two spins are antiparallell. Spin zero can be set by fixing 2 dof. Then the square plane can be rotated about spin zero, this is one dof. Then the square can be defomed into a planar parallellogram, 1 dof. and finally spin 1 and 2 can be bent so as to make a noncoplanar arrangement, 1 dof. In total this implies 5 dof that do not cost energy, they still preserve the constraint that all four spins sum to zero. This give the following specific heat for a single tetrahedron
+ \be  
+ cv = \f{1}{8} \left( 8 - 5 \right) = \f{3}{8}
+ \ee
+ thus to make a guess for the finite size behavior of $\cv$ on the pyrochlore lattice one can try to interpolate between these two limits
+ A guess is
+ \be
+    \cv = \f{3}{4} - \f{3}{2N}  = \f{3}{4} \left( 1 - \f{2}{N} \right)
+ \ee
+ This is not the finite size behavior predicted by Moessner and Chalker $1-\f{1}{N}$. 
+ However this is the finite size behavior observed by NBT. Also when generalizing NBT to $N_s=2$, we find $\cv = \f{1}{2} - \f{2}{2N}$ and to $N_s=4$, $\cv=1-\f{4}{2N}$ (thus indicating for pyrochlore $\cv=\f{N_s}{4} - \f{N_s}{2N}=\f{N_s}{4} \left( 1- \f{2}{N} \right)$, This should be rechecked, perhaps also for $N_s=5$). 
+ 
+ For the colinear ordered state on the pyrochlore lattice, $\cv = 5/8$, 
+ 
+ \subsubsection{Kagome}
+ For the Kagome lattice it has been argues that the ground state at $T=0$ is a coplanar state. Evaluating the energy deviations from this state it has been found that there is
+ one quartic mode and two quadratic modes per triangle. There are three spins in each triangle and each spin participates in two triangles, thus $N= 3 N_T/2$ or $N_T = 2N/3$, This means that
+ \be
+ \cv = \f{1}{N} \f{2N}{3} \left( 2 \f{1}{2} + \f{1}{4} \right) = \f{5}{6}  ??
+  \ee
+  where we have used that a quartic mode contributes $1/4$.
+  
+  However  from NBT it seems that 
+  \be
+  \cv  = 1 - \f{3}{2N}
+  \ee
+  and for a single triangle we get $\cv = \f{1}{2}$. The latter can be understood as we have 6 degrees of freedom in a single triangle, the ground state is planar 120 degrees configuration. This configuration can be rotated in the plane and the plane can be rotated in two directions. Thus there are $6-3=3$ energy costly directions. Assuming that these are quadratic one finds $\cv = \f{1}{2}$.
+  
+Supposedly the $11/12$ counting leads to a result
+\be 
+   \cv = \f{11}{12} - \f{5}{4N}
+\ee
+which gives $\cv=1/3$ for a single triangle $N=3$. Mysterious...
+
+Supposedly for larger $N_s$ the number of spin components, the kagome lattice AF becomes disordered. 
+
+ 
+ 
+
+
+
+\section{Acknowledgements}
+The computations were performed on resources provided by Sigma2 - the National Infrastructure for High Performance Computing and Data Storage in Norway, and on the Fox supercomputer at the University of Oslo.
+
+
+\bibliography{kqg.bib}
+
+\end{document}
